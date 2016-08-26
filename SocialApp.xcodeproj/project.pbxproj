@@ -12,6 +12,9 @@
 		8A845D691D70F78800896ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A845D671D70F78800896ADE /* Main.storyboard */; };
 		8A845D6B1D70F78800896ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A845D6A1D70F78800896ADE /* Assets.xcassets */; };
 		8A845D6E1D70F78800896ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A845D6C1D70F78800896ADE /* LaunchScreen.storyboard */; };
+		8A845D781D70F7A100896ADE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */; };
+		8A845D791D70F7A100896ADE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */; };
+		8A845D7A1D70F7A100896ADE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8A845D6A1D70F78800896ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A845D6D1D70F78800896ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A845D6F1D70F78800896ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A845D791D70F7A100896ADE /* FBSDKLoginKit.framework in Frameworks */,
+				8A845D781D70F7A100896ADE /* FBSDKCoreKit.framework in Frameworks */,
+				8A845D7A1D70F7A100896ADE /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +47,9 @@
 		8A845D571D70F78800896ADE = {
 			isa = PBXGroup;
 			children = (
+				8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */,
+				8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */,
+				8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */,
 				8A845D621D70F78800896ADE /* SocialApp */,
 				8A845D611D70F78800896ADE /* Products */,
 			);
@@ -247,6 +259,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SocialApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kargopolov.SocialApp;
@@ -258,6 +274,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SocialApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kargopolov.SocialApp;
