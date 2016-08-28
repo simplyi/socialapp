@@ -15,6 +15,7 @@
 		8A845D781D70F7A100896ADE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */; };
 		8A845D791D70F7A100896ADE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */; };
 		8A845D7A1D70F7A100896ADE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */; };
+		945415311D737102003B51E8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945415301D737102003B51E8 /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		945415301D737102003B51E8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 				8A845D791D70F7A100896ADE /* FBSDKLoginKit.framework in Frameworks */,
 				8A845D781D70F7A100896ADE /* FBSDKCoreKit.framework in Frameworks */,
 				8A845D7A1D70F7A100896ADE /* FBSDKShareKit.framework in Frameworks */,
+				945415311D737102003B51E8 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +50,7 @@
 		8A845D571D70F78800896ADE = {
 			isa = PBXGroup;
 			children = (
+				945415301D737102003B51E8 /* Bolts.framework */,
 				8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */,
 				8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */,
 				8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */,
@@ -304,6 +308,7 @@
 				8A845D741D70F78800896ADE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
