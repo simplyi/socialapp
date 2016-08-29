@@ -15,6 +15,9 @@
 		8A845D781D70F7A100896ADE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */; };
 		8A845D791D70F7A100896ADE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */; };
 		8A845D7A1D70F7A100896ADE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */; };
+		8AD4F2DF1D74F1DA002FC12D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */; };
+		8AD4F2E11D74F5BC002FC12D /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */; };
+		8AD4F2E31D74F70C002FC12D /* FetchUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */; };
 		945415311D737102003B51E8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945415301D737102003B51E8 /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
+		8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchUserProfileController.swift; sourceTree = "<group>"; };
 		945415301D737102003B51E8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +82,9 @@
 				8A845D6A1D70F78800896ADE /* Assets.xcassets */,
 				8A845D6C1D70F78800896ADE /* LaunchScreen.storyboard */,
 				8A845D6F1D70F78800896ADE /* Info.plist */,
+				8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */,
+				8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */,
+				8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */,
 			);
 			path = SocialApp;
 			sourceTree = "<group>";
@@ -151,8 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AD4F2DF1D74F1DA002FC12D /* MainMenuViewController.swift in Sources */,
 				8A845D661D70F78800896ADE /* ViewController.swift in Sources */,
 				8A845D641D70F78800896ADE /* AppDelegate.swift in Sources */,
+				8AD4F2E11D74F5BC002FC12D /* InviteFriendsViewController.swift in Sources */,
+				8AD4F2E31D74F70C002FC12D /* FetchUserProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         button.readPermissions = ["public_profile","email","user_friends"]
         button.delegate = self
         self.view.addSubview(button)
+
     }
     
     
@@ -29,6 +30,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!)
     {
@@ -44,10 +47,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             print("User token \(userToken.tokenString)")
             print("User ID = \(FBSDKAccessToken.currentAccessToken().userID)")
             //print("Token: \(FBSDKAccessToken.currentAccessToken().tokenString)")
-            
-            fetchUserProfile()
-            
-            
+   
         }
     }
     
@@ -55,27 +55,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     {
     }
     
-    func fetchUserProfile()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id,interested_in,gender,birthday,email,age_range,name,picture.width(480).height(480)"])
-        
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-                let id : NSString = result.valueForKey("id") as! String
-                print("User ID is: \(id)")
-                
-            }
-        })
-    }
-    
+       
     
 }
 
