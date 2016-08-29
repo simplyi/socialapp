@@ -77,14 +77,14 @@
 			isa = PBXGroup;
 			children = (
 				8A845D631D70F78800896ADE /* AppDelegate.swift */,
+				8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */,
+				8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */,
+				8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */,
 				8A845D651D70F78800896ADE /* ViewController.swift */,
 				8A845D671D70F78800896ADE /* Main.storyboard */,
 				8A845D6A1D70F78800896ADE /* Assets.xcassets */,
 				8A845D6C1D70F78800896ADE /* LaunchScreen.storyboard */,
 				8A845D6F1D70F78800896ADE /* Info.plist */,
-				8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */,
-				8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */,
-				8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */,
 			);
 			path = SocialApp;
 			sourceTree = "<group>";
