@@ -12,10 +12,15 @@ import FBSDKLoginKit
 
 class FetchUserProfileController: UIViewController {
     
+    @IBOutlet weak var userFullName: UILabel!
+    @IBOutlet weak var userProfileImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let userToken = FBSDKAccessToken.currentAccessToken()
+        userFullName.text = ""
+        
+        if let _ = FBSDKAccessToken.currentAccessToken()
         {
             fetchUserProfile()
         }
@@ -45,9 +50,35 @@ class FetchUserProfileController: UIViewController {
                 let id : NSString = result.valueForKey("id") as! String
                 print("User ID is: \(id)")
                 
+                if let userName = result.valueForKey("name") as? String
+                {
+                    self.userFullName.text = userName
+                }
+                
+                if let profilePictureObj = result.valueForKey("picture") as? NSDictionary
+                {
+                    let data = profilePictureObj.valueForKey("data") as! NSDictionary
+                    let pictureUrlString  = data.valueForKey("url") as! String
+                    let pictureUrl = NSURL(string: pictureUrlString)
+                    
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                        
+                        let imageData = NSData(contentsOfURL: pictureUrl!)
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            if let imageData = imageData
+                            {
+                                let userProfileImage = UIImage(data: imageData)
+                                self.userProfileImage.image = userProfileImage
+                                self.userProfileImage.contentMode = UIViewContentMode.ScaleAspectFit
+                            }
+                        }
+                    }
+ 
+                }
+                
             }
         })
     }
-    
-    
+ 
 }

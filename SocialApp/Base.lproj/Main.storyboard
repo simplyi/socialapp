@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login-->
@@ -36,9 +37,36 @@
                     <view key="view" contentMode="scaleToFill" id="SLm-Ea-aoW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIP-A0-bbn">
+                                <rect key="frame" x="20" y="70" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Dao-x7-ZIk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56Q-pC-qSF">
+                                <rect key="frame" x="20" y="128" width="280" height="169"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="56Q-pC-qSF" firstAttribute="top" secondItem="MIP-A0-bbn" secondAttribute="bottom" constant="37" id="2Ay-op-xMs"/>
+                            <constraint firstItem="MIP-A0-bbn" firstAttribute="leading" secondItem="SLm-Ea-aoW" secondAttribute="leadingMargin" constant="4" id="4oa-Y5-yI6"/>
+                            <constraint firstItem="MIP-A0-bbn" firstAttribute="top" secondItem="EvV-wo-wg1" secondAttribute="bottom" constant="50" id="bbJ-WN-Xtn"/>
+                            <constraint firstItem="MIP-A0-bbn" firstAttribute="leading" secondItem="56Q-pC-qSF" secondAttribute="leading" id="gDs-hF-Q1q"/>
+                            <constraint firstItem="MIP-A0-bbn" firstAttribute="centerX" secondItem="SLm-Ea-aoW" secondAttribute="centerX" id="hys-R8-5nL"/>
+                            <constraint firstItem="oHj-4y-wdl" firstAttribute="top" secondItem="56Q-pC-qSF" secondAttribute="bottom" constant="271" id="qpH-hy-D3N"/>
+                            <constraint firstItem="MIP-A0-bbn" firstAttribute="trailing" secondItem="56Q-pC-qSF" secondAttribute="trailing" id="wIE-jJ-ea1"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="userFullName" destination="MIP-A0-bbn" id="lmO-Zg-1Ju"/>
+                        <outlet property="userProfileImage" destination="56Q-pC-qSF" id="T5t-NQ-INN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljN-C9-qYo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
