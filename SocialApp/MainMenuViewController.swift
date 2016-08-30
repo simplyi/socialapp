@@ -18,7 +18,8 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         "Fetch user profile", //1
         "Invite friends", //2
         "List my friends(/invitable_friends)", //3
-        "User photos(Uploaded or tagged on)" //4
+        "User photos(Uploaded or tagged on)", //4
+        "Like button" //5
     ]
     
     override func viewDidLoad() {
@@ -80,6 +81,10 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             self.navigationController?.pushViewController(listUserPhotos, animated: true)
             break
             
+        case 5:
+            let linkeButtonViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LikeButtonViewController") as! LikeButtonViewController
+            self.navigationController?.pushViewController(linkeButtonViewController, animated: true)
+            break
             
         default:
             break

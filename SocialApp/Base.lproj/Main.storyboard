@@ -72,6 +72,25 @@
             </objects>
             <point key="canvasLocation" x="1383" y="795"/>
         </scene>
+        <!--Like Button View Controller-->
+        <scene sceneID="4eF-lR-7I4">
+            <objects>
+                <viewController storyboardIdentifier="LikeButtonViewController" id="nIc-11-pIy" customClass="LikeButtonViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rba-Nj-aTu"/>
+                        <viewControllerLayoutGuide type="bottom" id="zsc-GI-MF2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vbo-hn-2qN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P7w-Br-OLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2410" y="795"/>
+        </scene>
         <!--List of friends-->
         <scene sceneID="gPO-hv-Uhf">
             <objects>
@@ -108,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EIr-IP-zJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139" y="795"/>
+            <point key="canvasLocation" x="2075" y="795"/>
         </scene>
         <!--Invite friends-->
         <scene sceneID="sI2-3e-g44">
