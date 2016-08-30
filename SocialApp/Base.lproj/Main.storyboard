@@ -44,7 +44,7 @@
                                     <constraint firstAttribute="height" constant="21" id="Dao-x7-ZIk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="56Q-pC-qSF">
@@ -90,6 +90,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HH5-QL-DCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1736" y="795"/>
+        </scene>
+        <!--User photos-->
+        <scene sceneID="qVG-Ke-8Xv">
+            <objects>
+                <viewController storyboardIdentifier="ListUserPhotosViewController" title="User photos" id="RlH-hH-iAn" customClass="ListUserPhotosViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kTO-aJ-D6R"/>
+                        <viewControllerLayoutGuide type="bottom" id="KDJ-YF-cJw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iqx-3S-1Zd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIr-IP-zJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2139" y="795"/>
         </scene>
         <!--Invite friends-->
         <scene sceneID="sI2-3e-g44">
