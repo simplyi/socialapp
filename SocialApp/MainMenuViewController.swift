@@ -19,7 +19,8 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         "Invite friends", //2
         "List my friends(/invitable_friends)", //3
         "User photos(Uploaded or tagged on)", //4
-        "Like button" //5
+        "Like button", //5
+        "Share button" //6
     ]
     
     override func viewDidLoad() {
@@ -85,6 +86,11 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             let linkeButtonViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LikeButtonViewController") as! LikeButtonViewController
             self.navigationController?.pushViewController(linkeButtonViewController, animated: true)
             break
+        case 6:
+            let shareButtonViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ShareButtonViewController") as! ShareButtonViewController
+            self.navigationController?.pushViewController(shareButtonViewController, animated: true)
+            break
+            
             
         default:
             break

@@ -72,6 +72,25 @@
             </objects>
             <point key="canvasLocation" x="1383" y="795"/>
         </scene>
+        <!--Share Button View Controller-->
+        <scene sceneID="aBc-z9-Dqy">
+            <objects>
+                <viewController storyboardIdentifier="ShareButtonViewController" id="Ey9-MZ-VTu" customClass="ShareButtonViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hlF-0X-yfv"/>
+                        <viewControllerLayoutGuide type="bottom" id="dfZ-4m-HPh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nlt-AN-YC7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3U-pi-lLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1383" y="1419"/>
+        </scene>
         <!--Like Button View Controller-->
         <scene sceneID="4eF-lR-7I4">
             <objects>
