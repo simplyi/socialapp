@@ -16,7 +16,8 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     let menuOptions = [
         "Facebook login button",
         "Fetch user profile",
-        "Invite friends"
+        "Invite friends",
+        "List my friends"
     ]
     
     override func viewDidLoad() {
@@ -67,6 +68,12 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
             let inviteFriendsController = self.storyboard?.instantiateViewControllerWithIdentifier("InviteFriendsViewController") as! InviteFriendsViewController
             self.navigationController?.pushViewController(inviteFriendsController, animated: true)
                break
+            
+        case 3:
+            let listFriendsController = self.storyboard?.instantiateViewControllerWithIdentifier("ListFriendsViewController") as! ListFriendsViewController
+            self.navigationController?.pushViewController(listFriendsController, animated: true)
+            break
+            
             
         default:
             break

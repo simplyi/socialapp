@@ -72,6 +72,25 @@
             </objects>
             <point key="canvasLocation" x="1383" y="795"/>
         </scene>
+        <!--List of friends-->
+        <scene sceneID="gPO-hv-Uhf">
+            <objects>
+                <viewController storyboardIdentifier="ListFriendsViewController" title="List of friends" id="ye8-Xg-k5u" customClass="ListFriendsViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ps3-bY-37O"/>
+                        <viewControllerLayoutGuide type="bottom" id="4r5-OM-YWH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oFc-ae-LRT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HH5-QL-DCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736" y="795"/>
+        </scene>
         <!--Invite friends-->
         <scene sceneID="sI2-3e-g44">
             <objects>

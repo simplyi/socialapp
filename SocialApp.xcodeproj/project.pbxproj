@@ -15,6 +15,7 @@
 		8A845D781D70F7A100896ADE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */; };
 		8A845D791D70F7A100896ADE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */; };
 		8A845D7A1D70F7A100896ADE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */; };
+		8AB65D661D7504BF00EDEFA3 /* ListFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB65D651D7504BF00EDEFA3 /* ListFriendsViewController.swift */; };
 		8AD4F2DF1D74F1DA002FC12D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */; };
 		8AD4F2E11D74F5BC002FC12D /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */; };
 		8AD4F2E31D74F70C002FC12D /* FetchUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */; };
@@ -32,6 +33,7 @@
 		8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		8A845D771D70F7A100896ADE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		8AB65D651D7504BF00EDEFA3 /* ListFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFriendsViewController.swift; sourceTree = "<group>"; };
 		8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
 		8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchUserProfileController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */,
 				8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */,
 				8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */,
+				8AB65D651D7504BF00EDEFA3 /* ListFriendsViewController.swift */,
 				8A845D651D70F78800896ADE /* ViewController.swift */,
 				8A845D671D70F78800896ADE /* Main.storyboard */,
 				8A845D6A1D70F78800896ADE /* Assets.xcassets */,
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB65D661D7504BF00EDEFA3 /* ListFriendsViewController.swift in Sources */,
 				8AD4F2DF1D74F1DA002FC12D /* MainMenuViewController.swift in Sources */,
 				8A845D661D70F78800896ADE /* ViewController.swift in Sources */,
 				8A845D641D70F78800896ADE /* AppDelegate.swift in Sources */,
