@@ -29,7 +29,7 @@ class ListFriendsViewController: UIViewController {
 
     func fetchListOfFriends()
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields":"uid,name"] )
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/invitable_friends", parameters: ["fields":"uid,name"] )
         
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
