@@ -41,8 +41,8 @@ class InviteFriendsViewController: UIViewController, FBSDKAppInviteDialogDelegat
         let inviteDialog:FBSDKAppInviteDialog = FBSDKAppInviteDialog()
         if(inviteDialog.canShow()){
             
-            let appLinkUrl:NSURL = NSURL(string: "http://mylink.com")!
-            let previewImageUrl:NSURL = NSURL(string: "http://mylink.com/image.png")!
+            let appLinkUrl:NSURL = NSURL(string: "http://yourwebpage.com")!
+            let previewImageUrl:NSURL = NSURL(string: "http://yourwebpage.com/preview-image.png")!
             
             let inviteContent:FBSDKAppInviteContent = FBSDKAppInviteContent()
             inviteContent.appLinkURL = appLinkUrl
@@ -56,8 +56,7 @@ class InviteFriendsViewController: UIViewController, FBSDKAppInviteDialogDelegat
 
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [NSObject : AnyObject]!) {
-        print("Complete invite without error")
-        
+    
         let resultObject = NSDictionary(dictionary: results)
         
         if let didCancel = resultObject.valueForKey("completionGesture")
@@ -67,13 +66,11 @@ class InviteFriendsViewController: UIViewController, FBSDKAppInviteDialogDelegat
                 print("User Canceled invitation dialog")
             }
         }
-        // print(resultObject.valueForKey("didComplete"))
-        //print(resultObject.valueForKey("completionGesture"))
-        
+  
     }
     
     func appInviteDialog(appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: NSError!) {
-        print("Error in invite \(error)")
+        print("Error tool place in appInviteDialog \(error)")
     }
 
 
