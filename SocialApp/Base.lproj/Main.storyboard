@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1909" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mPx-EG-7zm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mPx-EG-7zm">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -90,6 +90,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3U-pi-lLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1383" y="1419"/>
+        </scene>
+        <!--Send Button View Controller-->
+        <scene sceneID="3R2-iE-ho1">
+            <objects>
+                <viewController storyboardIdentifier="SendButtonViewController" id="eQ8-2w-0wN" customClass="SendButtonViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NYa-KS-hd1"/>
+                        <viewControllerLayoutGuide type="bottom" id="vQf-ec-yVX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4B9-f6-yUF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSQ-bw-vqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736" y="1424"/>
+        </scene>
+        <!--Share Photo View Controller-->
+        <scene sceneID="V7A-wU-bN3">
+            <objects>
+                <viewController storyboardIdentifier="SharePhotoViewController" id="ACs-FE-kXl" customClass="SharePhotoViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kLy-NQ-2aE"/>
+                        <viewControllerLayoutGuide type="bottom" id="JuJ-cj-ses"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UrG-8Y-KUp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2O4-17-NmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2075" y="1424"/>
         </scene>
         <!--Like Button View Controller-->
         <scene sceneID="4eF-lR-7I4">

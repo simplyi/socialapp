@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A14C41D1D78D9060083DCD3 /* SendButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A14C41C1D78D9060083DCD3 /* SendButtonViewController.swift */; };
 		8A845D641D70F78800896ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A845D631D70F78800896ADE /* AppDelegate.swift */; };
 		8A845D661D70F78800896ADE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A845D651D70F78800896ADE /* ViewController.swift */; };
 		8A845D691D70F78800896ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A845D671D70F78800896ADE /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		8AA58AAB1D760AC900A066FD /* LikeButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA58AAA1D760AC900A066FD /* LikeButtonViewController.swift */; };
 		8AA58AAD1D760D8600A066FD /* ShareButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA58AAC1D760D8600A066FD /* ShareButtonViewController.swift */; };
 		8AB65D661D7504BF00EDEFA3 /* ListFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB65D651D7504BF00EDEFA3 /* ListFriendsViewController.swift */; };
+		8AC44C2A1D7A4190009F5A7C /* SharePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC44C291D7A4190009F5A7C /* SharePhotoViewController.swift */; };
 		8AD4F2DF1D74F1DA002FC12D /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */; };
 		8AD4F2E11D74F5BC002FC12D /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */; };
 		8AD4F2E31D74F70C002FC12D /* FetchUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */; };
@@ -26,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A14C41C1D78D9060083DCD3 /* SendButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendButtonViewController.swift; sourceTree = "<group>"; };
 		8A845D601D70F78800896ADE /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A845D631D70F78800896ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A845D651D70F78800896ADE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		8AA58AAA1D760AC900A066FD /* LikeButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButtonViewController.swift; sourceTree = "<group>"; };
 		8AA58AAC1D760D8600A066FD /* ShareButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareButtonViewController.swift; sourceTree = "<group>"; };
 		8AB65D651D7504BF00EDEFA3 /* ListFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListFriendsViewController.swift; sourceTree = "<group>"; };
+		8AC44C291D7A4190009F5A7C /* SharePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePhotoViewController.swift; sourceTree = "<group>"; };
 		8AD4F2DE1D74F1DA002FC12D /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
 		8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchUserProfileController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				8AA58AA81D75F53C00A066FD /* ListUserPhotosViewController.swift */,
 				8AA58AAA1D760AC900A066FD /* LikeButtonViewController.swift */,
 				8AA58AAC1D760D8600A066FD /* ShareButtonViewController.swift */,
+				8A14C41C1D78D9060083DCD3 /* SendButtonViewController.swift */,
+				8AC44C291D7A4190009F5A7C /* SharePhotoViewController.swift */,
 				8A845D651D70F78800896ADE /* ViewController.swift */,
 				8A845D671D70F78800896ADE /* Main.storyboard */,
 				8A845D6A1D70F78800896ADE /* Assets.xcassets */,
@@ -174,9 +180,11 @@
 			files = (
 				8AB65D661D7504BF00EDEFA3 /* ListFriendsViewController.swift in Sources */,
 				8AA58AAB1D760AC900A066FD /* LikeButtonViewController.swift in Sources */,
+				8A14C41D1D78D9060083DCD3 /* SendButtonViewController.swift in Sources */,
 				8AD4F2DF1D74F1DA002FC12D /* MainMenuViewController.swift in Sources */,
 				8AA58AAD1D760D8600A066FD /* ShareButtonViewController.swift in Sources */,
 				8AA58AA91D75F53C00A066FD /* ListUserPhotosViewController.swift in Sources */,
+				8AC44C2A1D7A4190009F5A7C /* SharePhotoViewController.swift in Sources */,
 				8A845D661D70F78800896ADE /* ViewController.swift in Sources */,
 				8A845D641D70F78800896ADE /* AppDelegate.swift in Sources */,
 				8AD4F2E11D74F5BC002FC12D /* InviteFriendsViewController.swift in Sources */,
