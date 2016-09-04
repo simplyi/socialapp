@@ -23,7 +23,8 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         "Share button", //6
         "Send button", //7
         "Share photo", //8 
-        "Share video with URL" //9
+        "Share video with URL", //9
+        "Share message dialog" //10
     ]
     
     override func viewDidLoad() {
@@ -107,6 +108,11 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         case 9:
             let shareVideoFromLibraryViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ShareVideoFromLibraryViewController") as! ShareVideoFromLibraryViewController
             self.navigationController?.pushViewController(shareVideoFromLibraryViewController, animated: true)
+            break
+            
+        case 10:
+            let publishMessageDialogViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PublishMessageViewController") as! PublishMessageViewController
+            self.navigationController?.pushViewController(publishMessageDialogViewController, animated: true)
             break
  
             

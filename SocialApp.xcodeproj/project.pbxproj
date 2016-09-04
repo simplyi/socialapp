@@ -30,6 +30,7 @@
 		945415551D7C956A003B51E8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945415541D7C956A003B51E8 /* AVFoundation.framework */; };
 		945415571D7CA0C8003B51E8 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945415561D7CA0C8003B51E8 /* Photos.framework */; };
 		945415591D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945415581D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift */; };
+		9454155B1D7CC1A2003B51E8 /* PublishMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9454155A1D7CC1A2003B51E8 /* PublishMessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		945415541D7C956A003B51E8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		945415561D7CA0C8003B51E8 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		945415581D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareVideoFromCameraViewController.swift; sourceTree = "<group>"; };
+		9454155A1D7CC1A2003B51E8 /* PublishMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublishMessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				8AC44C291D7A4190009F5A7C /* SharePhotoViewController.swift */,
 				945415501D7C7BA8003B51E8 /* ShareVideoFromLibraryViewController.swift */,
 				945415581D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift */,
+				9454155A1D7CC1A2003B51E8 /* PublishMessageViewController.swift */,
 				8A845D651D70F78800896ADE /* ViewController.swift */,
 				8A845D671D70F78800896ADE /* Main.storyboard */,
 				8A845D6A1D70F78800896ADE /* Assets.xcassets */,
@@ -201,6 +204,7 @@
 				8AA58AAB1D760AC900A066FD /* LikeButtonViewController.swift in Sources */,
 				8A14C41D1D78D9060083DCD3 /* SendButtonViewController.swift in Sources */,
 				8AD4F2DF1D74F1DA002FC12D /* MainMenuViewController.swift in Sources */,
+				9454155B1D7CC1A2003B51E8 /* PublishMessageViewController.swift in Sources */,
 				945415511D7C7BA8003B51E8 /* ShareVideoFromLibraryViewController.swift in Sources */,
 				8AA58AAD1D760D8600A066FD /* ShareButtonViewController.swift in Sources */,
 				945415591D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift in Sources */,

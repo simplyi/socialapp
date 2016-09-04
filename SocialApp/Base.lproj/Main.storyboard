@@ -91,6 +91,43 @@
             </objects>
             <point key="canvasLocation" x="1383" y="1419"/>
         </scene>
+        <!--Publish Message View Controller-->
+        <scene sceneID="3jS-Qs-Bnt">
+            <objects>
+                <viewController storyboardIdentifier="PublishMessageViewController" id="lmH-R6-xuQ" customClass="PublishMessageViewController" customModule="SocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wXc-iW-njR"/>
+                        <viewControllerLayoutGuide type="bottom" id="2oe-lo-TJx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="axW-6S-gkj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dEl-jK-ZHK">
+                                <rect key="frame" x="20" y="70" width="280" height="129"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQf-Wi-xnd">
+                                <rect key="frame" x="137" y="227" width="46" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendButton:" destination="lmH-R6-xuQ" eventType="touchUpInside" id="9Or-Fl-s9c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myTextView" destination="dEl-jK-ZHK" id="1Rv-Cu-EfJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jg4-s6-V30" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1383" y="2055"/>
+        </scene>
         <!--Send Button View Controller-->
         <scene sceneID="3R2-iE-ho1">
             <objects>
