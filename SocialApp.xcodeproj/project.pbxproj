@@ -25,6 +25,11 @@
 		8AD4F2E11D74F5BC002FC12D /* InviteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */; };
 		8AD4F2E31D74F70C002FC12D /* FetchUserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */; };
 		945415311D737102003B51E8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945415301D737102003B51E8 /* Bolts.framework */; };
+		945415511D7C7BA8003B51E8 /* ShareVideoFromLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945415501D7C7BA8003B51E8 /* ShareVideoFromLibraryViewController.swift */; };
+		945415531D7C8978003B51E8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945415521D7C8978003B51E8 /* MobileCoreServices.framework */; };
+		945415551D7C956A003B51E8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945415541D7C956A003B51E8 /* AVFoundation.framework */; };
+		945415571D7CA0C8003B51E8 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 945415561D7CA0C8003B51E8 /* Photos.framework */; };
+		945415591D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945415581D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,11 @@
 		8AD4F2E01D74F5BC002FC12D /* InviteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsViewController.swift; sourceTree = "<group>"; };
 		8AD4F2E21D74F70C002FC12D /* FetchUserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchUserProfileController.swift; sourceTree = "<group>"; };
 		945415301D737102003B51E8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		945415501D7C7BA8003B51E8 /* ShareVideoFromLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareVideoFromLibraryViewController.swift; sourceTree = "<group>"; };
+		945415521D7C8978003B51E8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		945415541D7C956A003B51E8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		945415561D7CA0C8003B51E8 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		945415581D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareVideoFromCameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945415571D7CA0C8003B51E8 /* Photos.framework in Frameworks */,
+				945415551D7C956A003B51E8 /* AVFoundation.framework in Frameworks */,
+				945415531D7C8978003B51E8 /* MobileCoreServices.framework in Frameworks */,
 				8A845D791D70F7A100896ADE /* FBSDKLoginKit.framework in Frameworks */,
 				8A845D781D70F7A100896ADE /* FBSDKCoreKit.framework in Frameworks */,
 				8A845D7A1D70F7A100896ADE /* FBSDKShareKit.framework in Frameworks */,
@@ -68,6 +81,9 @@
 		8A845D571D70F78800896ADE = {
 			isa = PBXGroup;
 			children = (
+				945415561D7CA0C8003B51E8 /* Photos.framework */,
+				945415541D7C956A003B51E8 /* AVFoundation.framework */,
+				945415521D7C8978003B51E8 /* MobileCoreServices.framework */,
 				945415301D737102003B51E8 /* Bolts.framework */,
 				8A845D751D70F7A100896ADE /* FBSDKCoreKit.framework */,
 				8A845D761D70F7A100896ADE /* FBSDKLoginKit.framework */,
@@ -98,6 +114,8 @@
 				8AA58AAC1D760D8600A066FD /* ShareButtonViewController.swift */,
 				8A14C41C1D78D9060083DCD3 /* SendButtonViewController.swift */,
 				8AC44C291D7A4190009F5A7C /* SharePhotoViewController.swift */,
+				945415501D7C7BA8003B51E8 /* ShareVideoFromLibraryViewController.swift */,
+				945415581D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift */,
 				8A845D651D70F78800896ADE /* ViewController.swift */,
 				8A845D671D70F78800896ADE /* Main.storyboard */,
 				8A845D6A1D70F78800896ADE /* Assets.xcassets */,
@@ -139,6 +157,7 @@
 				TargetAttributes = {
 					8A845D5F1D70F78800896ADE = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 69F8WS226X;
 					};
 				};
 			};
@@ -182,7 +201,9 @@
 				8AA58AAB1D760AC900A066FD /* LikeButtonViewController.swift in Sources */,
 				8A14C41D1D78D9060083DCD3 /* SendButtonViewController.swift in Sources */,
 				8AD4F2DF1D74F1DA002FC12D /* MainMenuViewController.swift in Sources */,
+				945415511D7C7BA8003B51E8 /* ShareVideoFromLibraryViewController.swift in Sources */,
 				8AA58AAD1D760D8600A066FD /* ShareButtonViewController.swift in Sources */,
+				945415591D7CAA2D003B51E8 /* ShareVideoFromCameraViewController.swift in Sources */,
 				8AA58AA91D75F53C00A066FD /* ListUserPhotosViewController.swift in Sources */,
 				8AC44C2A1D7A4190009F5A7C /* SharePhotoViewController.swift in Sources */,
 				8A845D661D70F78800896ADE /* ViewController.swift in Sources */,
@@ -299,6 +320,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -307,6 +330,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kargopolov.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -314,6 +338,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -322,6 +348,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kargopolov.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
