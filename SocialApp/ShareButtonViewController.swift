@@ -16,7 +16,7 @@ class ShareButtonViewController: UIViewController {
         super.viewDidLoad()
         
         let shareContent = FBSDKShareLinkContent()
-        shareContent.contentURL = NSURL(string: "https://www.facebook.com/FacebookDevelopers")
+        shareContent.contentURL = URL(string: "https://www.facebook.com/FacebookDevelopers")
 
         let shareButton = FBSDKShareButton()
         shareButton.center = view.center

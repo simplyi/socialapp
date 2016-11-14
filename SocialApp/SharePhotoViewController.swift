@@ -32,9 +32,9 @@ class SharePhotoViewController: UIViewController, UIImagePickerControllerDelegat
     
     func setupImagePickerButton()
     {
-        let button = UIButton(type: UIButtonType.System) as UIButton
+        let button = UIButton(type: UIButtonType.system) as UIButton
         
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
  
         let buttonWidth:CGFloat = 150
@@ -42,12 +42,12 @@ class SharePhotoViewController: UIViewController, UIImagePickerControllerDelegat
         let xPostion:CGFloat = (screenWidth/2)-(buttonWidth/2)
         let yPostion:CGFloat = 70
         
-        button.frame = CGRectMake(xPostion, yPostion, buttonWidth, buttonHeight)
+        button.frame = CGRect(x: xPostion, y: yPostion, width: buttonWidth, height: buttonHeight)
         
-        button.backgroundColor = UIColor.lightGrayColor()
-        button.setTitle("Select photo", forState: UIControlState.Normal)
-        button.tintColor = UIColor.blackColor()
-        button.addTarget(self, action: #selector(SharePhotoViewController.displayImagePickerButtonTapped) , forControlEvents: .TouchUpInside)
+        button.backgroundColor = UIColor.lightGray
+        button.setTitle("Select photo", for: UIControlState())
+        button.tintColor = UIColor.black
+        button.addTarget(self, action: #selector(SharePhotoViewController.displayImagePickerButtonTapped) , for: .touchUpInside)
         self.view.addSubview(button)
     }
     
@@ -55,7 +55,7 @@ class SharePhotoViewController: UIViewController, UIImagePickerControllerDelegat
     {
         myImageView = UIImageView()
         
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         
         let imageWidth:CGFloat = 200
@@ -64,7 +64,7 @@ class SharePhotoViewController: UIViewController, UIImagePickerControllerDelegat
         let xPostion:CGFloat = (screenWidth/2) - (imageWidth/2)
         let yPostion:CGFloat = 100
         
-        myImageView.frame = CGRectMake(xPostion, yPostion, imageWidth, imageHeight)
+        myImageView.frame = CGRect(x: xPostion, y: yPostion, width: imageWidth, height: imageHeight)
         
         self.view.addSubview(myImageView)
     }
@@ -73,23 +73,23 @@ class SharePhotoViewController: UIViewController, UIImagePickerControllerDelegat
         
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self;
-        myPickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        myPickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
-        self.presentViewController(myPickerController, animated: true, completion: nil)
+        self.present(myPickerController, animated: true, completion: nil)
         
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         myImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        myImageView.backgroundColor = UIColor.clearColor()
-        myImageView.contentMode = UIViewContentMode.ScaleAspectFit
-        self.dismissViewControllerAnimated(true, completion: nil)
+        myImageView.backgroundColor = UIColor.clear
+        myImageView.contentMode = UIViewContentMode.scaleAspectFit
+        self.dismiss(animated: true, completion: nil)
         
         let photo:FBSDKSharePhoto = FBSDKSharePhoto()
  
         photo.image = myImageView.image
-        photo.userGenerated = true
+        photo.isUserGenerated = true
         
         let content:FBSDKSharePhotoContent = FBSDKSharePhotoContent()
         content.photos = [photo]

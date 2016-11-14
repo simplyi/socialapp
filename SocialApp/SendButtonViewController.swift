@@ -16,7 +16,7 @@ class SendButtonViewController: UIViewController {
         super.viewDidLoad()
 
         let sendContent = FBSDKShareLinkContent()
-        sendContent.contentURL = NSURL(string: "https://www.swiftdeveloperblog.com/code-examples")
+        sendContent.contentURL = URL(string: "https://www.swiftdeveloperblog.com/code-examples")
         sendContent.contentDescription = "Short and ready to use Swift Code examples"
         
         let sendButton = FBSDKSendButton()
@@ -24,7 +24,7 @@ class SendButtonViewController: UIViewController {
         
         sendButton.shareContent = sendContent
         
-        if sendButton.hidden {
+        if sendButton.isHidden {
             print("No messager installed and send feature is not supported")
         } else {
             self.view.addSubview(sendButton)

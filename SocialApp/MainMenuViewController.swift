@@ -42,82 +42,82 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return menuOptions.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let tableCell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath)
+        let tableCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
         tableCell.textLabel?.text = menuOptions[indexPath.row]
         
         return tableCell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         print("\(menuOptions[indexPath.row]) is selected")
         
         switch indexPath.row
         {
         case 0:
-            let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("FacebookLoginButton") as! ViewController
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "FacebookLoginButton") as! ViewController
             self.navigationController?.pushViewController(loginViewController, animated: true)
                 break
             
         case 1:
-            let userProfile = self.storyboard?.instantiateViewControllerWithIdentifier("FetchUserProfileController") as! FetchUserProfileController
+            let userProfile = self.storyboard?.instantiateViewController(withIdentifier: "FetchUserProfileController") as! FetchUserProfileController
             self.navigationController?.pushViewController(userProfile, animated: true)
             break
             
         case 2:
-            let inviteFriendsController = self.storyboard?.instantiateViewControllerWithIdentifier("InviteFriendsViewController") as! InviteFriendsViewController
+            let inviteFriendsController = self.storyboard?.instantiateViewController(withIdentifier: "InviteFriendsViewController") as! InviteFriendsViewController
             self.navigationController?.pushViewController(inviteFriendsController, animated: true)
                break
             
         case 3:
-            let listFriendsController = self.storyboard?.instantiateViewControllerWithIdentifier("ListFriendsViewController") as! ListFriendsViewController
+            let listFriendsController = self.storyboard?.instantiateViewController(withIdentifier: "ListFriendsViewController") as! ListFriendsViewController
             self.navigationController?.pushViewController(listFriendsController, animated: true)
             break
             
         case 4:
-            let listUserPhotos = self.storyboard?.instantiateViewControllerWithIdentifier("ListUserPhotosViewController") as! ListUserPhotosViewController
+            let listUserPhotos = self.storyboard?.instantiateViewController(withIdentifier: "ListUserPhotosViewController") as! ListUserPhotosViewController
             self.navigationController?.pushViewController(listUserPhotos, animated: true)
             break
             
         case 5:
-            let linkeButtonViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LikeButtonViewController") as! LikeButtonViewController
+            let linkeButtonViewController = self.storyboard?.instantiateViewController(withIdentifier: "LikeButtonViewController") as! LikeButtonViewController
             self.navigationController?.pushViewController(linkeButtonViewController, animated: true)
             break
         case 6:
-            let shareButtonViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ShareButtonViewController") as! ShareButtonViewController
+            let shareButtonViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShareButtonViewController") as! ShareButtonViewController
             self.navigationController?.pushViewController(shareButtonViewController, animated: true)
             break
             
         case 7:
-            let sendButtonViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SendButtonViewController") as! SendButtonViewController
+            let sendButtonViewController = self.storyboard?.instantiateViewController(withIdentifier: "SendButtonViewController") as! SendButtonViewController
             self.navigationController?.pushViewController(sendButtonViewController, animated: true)
             break
             
         case 8:
-            let sharePhotoButtonViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SharePhotoViewController") as! SharePhotoViewController
+            let sharePhotoButtonViewController = self.storyboard?.instantiateViewController(withIdentifier: "SharePhotoViewController") as! SharePhotoViewController
             self.navigationController?.pushViewController(sharePhotoButtonViewController, animated: true)
             break
             
         case 9:
-            let shareVideoFromLibraryViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ShareVideoFromLibraryViewController") as! ShareVideoFromLibraryViewController
+            let shareVideoFromLibraryViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShareVideoFromLibraryViewController") as! ShareVideoFromLibraryViewController
             self.navigationController?.pushViewController(shareVideoFromLibraryViewController, animated: true)
             break
             
         case 10:
-            let publishMessageDialogViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PublishMessageViewController") as! PublishMessageViewController
+            let publishMessageDialogViewController = self.storyboard?.instantiateViewController(withIdentifier: "PublishMessageViewController") as! PublishMessageViewController
             self.navigationController?.pushViewController(publishMessageDialogViewController, animated: true)
             break
             
         case 11:
-            let listUserAlbumsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ListUserAlbumsViewController") as! ListUserAlbumsViewController
+            let listUserAlbumsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ListUserAlbumsViewController") as! ListUserAlbumsViewController
             self.navigationController?.pushViewController(listUserAlbumsViewController, animated: true)
             break
  

@@ -20,7 +20,7 @@ class PublishMessageViewController: UIViewController {
  
         self.automaticallyAdjustsScrollViewInsets = false
         
-        if !(FBSDKAccessToken.currentAccessToken().hasGranted("publish_actions")) {
+        if !(FBSDKAccessToken.current().hasGranted("publish_actions")) {
  
             print("require publish_actions permissions")
             requestPublishPermissions()
@@ -37,11 +37,11 @@ class PublishMessageViewController: UIViewController {
     {
         let messageToPost = myTextView.text
         
-        if messageToPost.isEmpty {
+        if (messageToPost?.isEmpty)! {
            return
         }
         
-        FBSDKGraphRequest.init(graphPath: "me/feed", parameters: ["message" : messageToPost], HTTPMethod: "POST").startWithCompletionHandler({ (connection, result, error) -> Void in
+        FBSDKGraphRequest.init(graphPath: "me/feed", parameters: ["message" : messageToPost!], httpMethod: "POST").start(completionHandler: { (connection, result, error) -> Void in
             if let error = error {
                 print("Error: \(error)")
             } else {
@@ -56,19 +56,19 @@ class PublishMessageViewController: UIViewController {
     {
         let login: FBSDKLoginManager = FBSDKLoginManager()
         
-        login.logInWithPublishPermissions(["publish_actions"], fromViewController: self) { (result, error) in
+        login.logIn(withPublishPermissions: ["publish_actions"], from: self) { (result, error) in
             if (error != nil) {
-                NSLog(error.localizedFailureReason!)
-            } else if result.isCancelled {
-                NSLog("Canceled")
-            } else if result.grantedPermissions.contains("publish_actions") {
+                print(error!)
+            } else if (result?.isCancelled)! {
+                print("Canceled")
+            } else if (result?.grantedPermissions.contains("publish_actions"))! {
                 print("permissions granted")
             }
         }
     }
     
-     @IBAction func sendButton(sender: AnyObject) {
-        if FBSDKAccessToken.currentAccessToken().hasGranted("publish_actions") {
+     @IBAction func sendButton(_ sender: AnyObject) {
+        if FBSDKAccessToken.current().hasGranted("publish_actions") {
             publishMessage()
         }
     }

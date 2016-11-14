@@ -26,23 +26,23 @@ class ListAlbumPhotosViewController: UIViewController, UICollectionViewDataSourc
         myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         myCollectionView.dataSource = self
         myCollectionView.delegate = self
-        myCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
-        myCollectionView.backgroundColor = UIColor.whiteColor()
+        myCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
+        myCollectionView.backgroundColor = UIColor.white
         self.view.addSubview(myCollectionView)
         
         
-        if let _ = FBSDKAccessToken.currentAccessToken()
+        if let _ = FBSDKAccessToken.current()
         {
             fetchListOfAlbumPhotos()
         }
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print(albumObject)
         
-        self.navigationItem.title = albumObject?.objectForKey("name") as? String
+        self.navigationItem.title = albumObject?.object(forKey: "name") as? String
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,7 +51,7 @@ class ListAlbumPhotosViewController: UIViewController, UICollectionViewDataSourc
     }
     
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         var returnValue = 0
         
@@ -63,24 +63,24 @@ class ListAlbumPhotosViewController: UIViewController, UICollectionViewDataSourc
         return returnValue
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let myCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath)
-        myCell.backgroundColor = UIColor.blackColor()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
+        myCell.backgroundColor = UIColor.black
         
         let userPhotoObject = self.albumPhotos![indexPath.row] as! NSDictionary
-        let userPhotoUrlString = userPhotoObject.valueForKey("picture") as! String
+        let userPhotoUrlString = userPhotoObject.value(forKey: "picture") as! String
         
-        let imageUrl:NSURL = NSURL(string: userPhotoUrlString)!
+        let imageUrl:URL = URL(string: userPhotoUrlString)!
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             
-            let imageData:NSData = NSData(contentsOfURL: imageUrl)!
-            let imageView = UIImageView(frame: CGRectMake(0, 0, myCell.frame.size.width, myCell.frame.size.height))
-            dispatch_async(dispatch_get_main_queue()) {
+            let imageData:Data = try! Data(contentsOf: imageUrl)
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: myCell.frame.size.width, height: myCell.frame.size.height))
+            DispatchQueue.main.async {
                 
                 let image = UIImage(data: imageData)
                 imageView.image = image
-                imageView.contentMode = UIViewContentMode.ScaleAspectFit
+                imageView.contentMode = UIViewContentMode.scaleAspectFit
                 
                 myCell.addSubview(imageView)
             }
@@ -92,11 +92,11 @@ class ListAlbumPhotosViewController: UIViewController, UICollectionViewDataSourc
     
     func fetchListOfAlbumPhotos()
     {
-        let graphRequestUri = "\((albumObject?.valueForKey("id"))!)/photos"
+        let graphRequestUri = "\((albumObject?.value(forKey: "id"))!)/photos"
         print(graphRequestUri)
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: graphRequestUri, parameters: ["fields":"picture"] )
         
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
             
             if ((error) != nil)
             {
@@ -105,8 +105,9 @@ class ListAlbumPhotosViewController: UIViewController, UICollectionViewDataSourc
             }
             else
             {
+                let fbResult:[String:AnyObject] = result as! [String : AnyObject]
                 print("fetched user: \(result)")
-                self.albumPhotos = result.valueForKey("data") as! NSArray?
+                self.albumPhotos = fbResult["data"] as! NSArray?
                 
                 self.myCollectionView.reloadData()
                 

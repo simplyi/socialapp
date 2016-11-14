@@ -14,7 +14,7 @@ class ListFriendsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let _ = FBSDKAccessToken.currentAccessToken()
+        if let _ = FBSDKAccessToken.current()
         {
             fetchListOfFriends()
         }
@@ -31,7 +31,7 @@ class ListFriendsViewController: UIViewController {
     {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/invitable_friends", parameters: ["fields":"uid,name"] )
         
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
             
             if ((error) != nil)
             {

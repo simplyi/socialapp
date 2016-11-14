@@ -26,12 +26,12 @@ class ListUserAlbumsViewController: UIViewController, UICollectionViewDataSource
         myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         myCollectionView.dataSource = self
         myCollectionView.delegate = self
-        myCollectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
-        myCollectionView.backgroundColor = UIColor.whiteColor()
+        myCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
+        myCollectionView.backgroundColor = UIColor.white
         self.view.addSubview(myCollectionView)
         
         
-        if let _ = FBSDKAccessToken.currentAccessToken()
+        if let _ = FBSDKAccessToken.current()
         {
             fetchListOfUserAlbums()
         }
@@ -42,7 +42,7 @@ class ListUserAlbumsViewController: UIViewController, UICollectionViewDataSource
         // Dispose of any resources that can be recreated.
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         var returnValue = 0
         
@@ -54,26 +54,26 @@ class ListUserAlbumsViewController: UIViewController, UICollectionViewDataSource
         return returnValue
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let myCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath)
-        myCell.backgroundColor = UIColor.blackColor()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
+        myCell.backgroundColor = UIColor.black
         
         let userAlbumObject = self.userAlbums![indexPath.row] as! NSDictionary
-        let userAlbumPictureObject = userAlbumObject.valueForKey("picture") as! NSDictionary
-        let userAlbumPictureDataObject = userAlbumPictureObject.valueForKey("data") as! NSDictionary
-        let usetAlbumPictureUrlString = userAlbumPictureDataObject.valueForKey("url") as! String
+        let userAlbumPictureObject = userAlbumObject.value(forKey: "picture") as! NSDictionary
+        let userAlbumPictureDataObject = userAlbumPictureObject.value(forKey: "data") as! NSDictionary
+        let usetAlbumPictureUrlString = userAlbumPictureDataObject.value(forKey: "url") as! String
         
-        let imageUrl:NSURL = NSURL(string: usetAlbumPictureUrlString)!
+        let imageUrl:URL = URL(string: usetAlbumPictureUrlString)!
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             
-            let imageData:NSData = NSData(contentsOfURL: imageUrl)!
-            let imageView = UIImageView(frame: CGRectMake(0, 0, myCell.frame.size.width, myCell.frame.size.height))
-            dispatch_async(dispatch_get_main_queue()) {
+            let imageData:Data = try! Data(contentsOf: imageUrl)
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: myCell.frame.size.width, height: myCell.frame.size.height))
+            DispatchQueue.main.async {
                 
                 let image = UIImage(data: imageData)
                 imageView.image = image
-                imageView.contentMode = UIViewContentMode.ScaleAspectFit
+                imageView.contentMode = UIViewContentMode.scaleAspectFit
                 
                 myCell.addSubview(imageView)
             }
@@ -82,10 +82,10 @@ class ListUserAlbumsViewController: UIViewController, UICollectionViewDataSource
         return myCell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         let userAlbumObject = self.userAlbums![indexPath.row] as! NSDictionary
-        let userAlbumPhotosViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ListAlbumPhotosViewController") as! ListAlbumPhotosViewController
+        let userAlbumPhotosViewController = self.storyboard?.instantiateViewController(withIdentifier: "ListAlbumPhotosViewController") as! ListAlbumPhotosViewController
         
         userAlbumPhotosViewController.albumObject = userAlbumObject
         
@@ -98,7 +98,7 @@ class ListUserAlbumsViewController: UIViewController, UICollectionViewDataSource
     {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/albums", parameters: ["fields":"picture, name, privacy"] )
         
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
             
             if ((error) != nil)
             {
@@ -108,7 +108,11 @@ class ListUserAlbumsViewController: UIViewController, UICollectionViewDataSource
             else
             {
                 print("fetched user: \(result)")
-                self.userAlbums = result.valueForKey("data") as! NSArray?
+               // self.userAlbums = result.value(forKey: "data") as! NSArray?
+                
+                let fbResult:[String:AnyObject] = result as! [String : AnyObject]
+                self.userAlbums = fbResult["data"] as! NSArray?
+                
                 
                 self.myCollectionView.reloadData()
                 

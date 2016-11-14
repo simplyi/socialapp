@@ -20,7 +20,7 @@ class FetchUserProfileController: UIViewController {
         
         userFullName.text = ""
         
-        if let _ = FBSDKAccessToken.currentAccessToken()
+        if let _ = FBSDKAccessToken.current()
         {
             fetchUserProfile()
         }
@@ -37,7 +37,7 @@ class FetchUserProfileController: UIViewController {
     {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480)"])
         
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
             
             if ((error) != nil)
             {
@@ -47,30 +47,31 @@ class FetchUserProfileController: UIViewController {
             {
                 print("Print entire fetched result: \(result)")
                 
-                let id : NSString = result.valueForKey("id") as! String
-                print("User ID is: \(id)")
+               // let id : NSString = result.value(forKey: "id") as! String
+                let fbResult:[String:AnyObject] = result as! [String : AnyObject]
+                print("User ID is: \(fbResult["id"])")
                 
-                if let userName = result.valueForKey("name") as? String
+                if let userName = fbResult["name"] as? String
                 {
                     self.userFullName.text = userName
                 }
                 
-                if let profilePictureObj = result.valueForKey("picture") as? NSDictionary
+                if let profilePictureObj = fbResult["picture"] as? NSDictionary
                 {
-                    let data = profilePictureObj.valueForKey("data") as! NSDictionary
-                    let pictureUrlString  = data.valueForKey("url") as! String
-                    let pictureUrl = NSURL(string: pictureUrlString)
+                    let data = profilePictureObj.value(forKey: "data") as! NSDictionary
+                    let pictureUrlString  = data.value(forKey: "url") as! String
+                    let pictureUrl = URL(string: pictureUrlString)
                     
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                    DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
                         
-                        let imageData = NSData(contentsOfURL: pictureUrl!)
+                        let imageData = try? Data(contentsOf: pictureUrl!)
                         
-                        dispatch_async(dispatch_get_main_queue()) {
+                        DispatchQueue.main.async {
                             if let imageData = imageData
                             {
                                 let userProfileImage = UIImage(data: imageData)
                                 self.userProfileImage.image = userProfileImage
-                                self.userProfileImage.contentMode = UIViewContentMode.ScaleAspectFit
+                                self.userProfileImage.contentMode = UIViewContentMode.scaleAspectFit
                             }
                         }
                     }

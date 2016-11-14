@@ -19,7 +19,7 @@ class ShareVideoFromLibraryViewController: UIViewController, UIImagePickerContro
         super.viewDidLoad()
         
         setupImagePickerButton()
-        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.Authorized {
+        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
             PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) in
                 
             })
@@ -29,9 +29,9 @@ class ShareVideoFromLibraryViewController: UIViewController, UIImagePickerContro
     
     func setupImagePickerButton()
     {
-        let button = UIButton(type: UIButtonType.System) as UIButton
+        let button = UIButton(type: UIButtonType.system) as UIButton
         
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenSize: CGRect = UIScreen.main.bounds
         let screenWidth = screenSize.width
         
         let buttonWidth:CGFloat = 150
@@ -39,12 +39,12 @@ class ShareVideoFromLibraryViewController: UIViewController, UIImagePickerContro
         let xPostion:CGFloat = (screenWidth/2)-(buttonWidth/2)
         let yPostion:CGFloat = 70
         
-        button.frame = CGRectMake(xPostion, yPostion, buttonWidth, buttonHeight)
+        button.frame = CGRect(x: xPostion, y: yPostion, width: buttonWidth, height: buttonHeight)
         
-        button.backgroundColor = UIColor.lightGrayColor()
-        button.setTitle("Select video", forState: UIControlState.Normal)
-        button.tintColor = UIColor.blackColor()
-        button.addTarget(self, action: #selector(ShareVideoFromLibraryViewController.displayImagePickerButtonTapped) , forControlEvents: .TouchUpInside)
+        button.backgroundColor = UIColor.lightGray
+        button.setTitle("Select video", for: UIControlState())
+        button.tintColor = UIColor.black
+        button.addTarget(self, action: #selector(ShareVideoFromLibraryViewController.displayImagePickerButtonTapped) , for: .touchUpInside)
         self.view.addSubview(button)
     }
     
@@ -52,18 +52,18 @@ class ShareVideoFromLibraryViewController: UIViewController, UIImagePickerContro
         
         let myPickerController = UIImagePickerController()
         myPickerController.delegate = self;
-        myPickerController.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+        myPickerController.sourceType = UIImagePickerControllerSourceType.savedPhotosAlbum
         myPickerController.mediaTypes = [kUTTypeMovie as String]
         
-        self.presentViewController(myPickerController, animated: true, completion: nil)
+        self.present(myPickerController, animated: true, completion: nil)
         
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
  
         // Get Asset URL
-        let videoUrl = info[UIImagePickerControllerReferenceURL] as? NSURL
+        let videoUrl = info[UIImagePickerControllerReferenceURL] as? URL
     
         let facebookVideo = FBSDKShareVideo()
         facebookVideo.videoURL =  videoUrl
@@ -76,11 +76,11 @@ class ShareVideoFromLibraryViewController: UIViewController, UIImagePickerContro
         shareButton.center = view.center
         
         // Add share FBSDKShareVideo to main view
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
           self.view.addSubview(shareButton)
         }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
